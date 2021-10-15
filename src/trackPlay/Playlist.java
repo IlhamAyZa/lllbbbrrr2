@@ -5,7 +5,7 @@ public class Playlist {
 	private String name;
 	private Song[] songList = new Song[10];
 	private String user;
-	
+
 	public Playlist(String name, String user) {
 		this.name = name;
 		this.user = user;
@@ -19,11 +19,11 @@ public class Playlist {
 
 	public void addSong(Song s) {
 		for (int i = 0; i < 10; i++) {
-			if(songList[i] != null) {}
-			else {
+			if (songList[i] != null) {
+			} else {
 				songList[i] = s;
 				break;
-			}			
+			}
 			// songList is full
 		}
 	}
@@ -33,15 +33,24 @@ public class Playlist {
 	}
 
 	public int getNumSongs() {
-		return songList.length;
+		int numOfSongs = 0;
+		
+		for (Song s : songList) {
+			if (s == null) {
+			} else {
+				numOfSongs++;
+			}
+		}
+		
+		return numOfSongs;
 	}
 
 	public int TotalDuration() {
 		int duration = 0;
 
 		for (Song s : songList) {
-			if(songList[i] != null) {}
-			else {
+			if (s == null) {
+			} else {
 				duration += s.getDuratio();
 			}
 		}
@@ -54,17 +63,16 @@ public class Playlist {
 
 		for (Song s : songList) {
 			if (s == null) {
-				
-			}
-			else {
+
+			} else {
 				price += s.getCost();
 			}
 		}
 
 		return price;
 	}
-	
-	public Song[] getSongArray () {
+
+	public Song[] getSongArray() {
 		return songList;
 	}
 
@@ -75,5 +83,4 @@ public class Playlist {
 	public String getUser() {
 		return user;
 	}
-
 }
