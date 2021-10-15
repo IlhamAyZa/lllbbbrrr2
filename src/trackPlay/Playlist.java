@@ -40,7 +40,10 @@ public class Playlist {
 		int duration = 0;
 
 		for (Song s : songList) {
-			duration += s.getDuratio();
+			if(songList[i] != null) {}
+			else {
+				duration += s.getDuratio();
+			}
 		}
 
 		return duration;
