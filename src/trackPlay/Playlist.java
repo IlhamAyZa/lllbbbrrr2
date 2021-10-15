@@ -19,8 +19,7 @@ public class Playlist {
 
 	public void addSong(Song s) {
 		for (int i = 0; i < 10; i++) {
-			if (songList[i] != null) {
-			} else {
+			if (songList[i] == null){
 				songList[i] = s;
 				break;
 			}
@@ -36,8 +35,7 @@ public class Playlist {
 		int numOfSongs = 0;
 		
 		for (Song s : songList) {
-			if (s == null) {
-			} else {
+			if (s != null) { 
 				numOfSongs++;
 			}
 		}
@@ -49,8 +47,7 @@ public class Playlist {
 		int duration = 0;
 
 		for (Song s : songList) {
-			if (s == null) {
-			} else {
+			if (s != null) {
 				duration += s.getDuratio();
 			}
 		}
@@ -62,9 +59,7 @@ public class Playlist {
 		int price = 0;
 
 		for (Song s : songList) {
-			if (s == null) {
-
-			} else {
+			if (s != null) {
 				price += s.getCost();
 			}
 		}
